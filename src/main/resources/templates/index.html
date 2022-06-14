@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<!--sync up back-end with thymeleaf url-->
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to my Product site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+</head>
+<body>
+
+<!-- Original navbar section is cut here and pasted into navbar.html.  -->
+<!-- Need to insert the navbar fragment here-->
+<div th:insert="fragments/navbar.html :: navbar"></div>
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">-->
+<!--    <a class="navbar-brand" href="https://www.generation.org/">BrandLogo</a>-->
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--        <ul class="navbar-nav mr-auto">                                               &lt;!&ndash; margin right - push items to the right &ndash;&gt;-->
+<!--            <li class="nav-item active"><a class="nav-link" href="index.html"> HOME </a></li>-->
+<!--            <li class="nav-item "><a class="nav-link" href="aboutus.html"> ABOUT </a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="products.html"> PRODUCTS </a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="productform.html"> PRODUCTS FORM </a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal"> CONTACT </a></li>-->
+<!--        </ul>-->
+
+<!--        <form class="form-inline my-2 my-lg-0">-->
+<!--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</nav>-->
+
+
+<!-- Move modal to navbar.html-->
+<!-- Need to insert the modal fragment here -->
+<div th:insert="fragments/navbar.html :: menuModal"></div>
+
+<!--<div class="modal fade" id="exampleModal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <p>Contact details</p>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <p>For more enquiries, please contact +65-97887434 or email at contactsg@generation.org</p>-->
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--                <a class="btn btn-primary" data-dismiss="modal">Close</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="container my-5">
+    <div class="jumbotron">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/img_mountains_wide.jpg" class="d-block w-100" alt="Mountain Wide">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/img_nature_wide.jpg" class="d-block w-100" alt="Nature Wide">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/img_snow_wide.jpg" class="d-block w-100" alt="Snow Wide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container" >
+    <div class="row">
+        <div class="col-lg-6">
+            <h3><a href="#">REIMAGINING GLOBAL EMPLOYMENT</a></h3>
+            <p>We are tackling COVID-19 jobs recovery and beyond with a group of committed global partners who have a shared vision of creating equity in opportunity and breaking down systemic barriers to employment. BlackRock, McKinsey & Company, Microsoft Corp., and Verizon have together pledged $77 million in new funding and $50 million in in-kind resources to transform employment systems, support new research, and serve 75,000 people.</p>
+            <p>
+                <video width="420" height="240" controls>
+                    <source src="https://vimeo.com/510509233" type="video/mp4">
+                </video>
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <h3><a href="#">OUR MISSION</a></h3>
+            <p>We transform education to employment systems to prepare, place, and support people into life-changing careers that would otherwise be inaccessible. We have a methodology that we believe can serve hundreds of thousands—and eventually millions—of people who are unemployed, underemployed, or need to learn new skills. Our program creates real business value for employers and lasting career impact for participants.</p>
+            <a href="#" class="btn btn-info">Read More</a>
+        </div>
+        <div class="col-lg-3">
+            <div class="card" style="width: 14rem;">
+                <img src="images/misc-DM-cropped.jpg" class="card-img-top" alt="Our Values">
+                <div class="card-body">
+                    <h5 class="card-title">OUR VALUES</h5>
+                    <p class="card-text">We know that people do their best when treated with kindness and respect. We support and develop each other personally and professionally, allowing our unique talents and capabilities to flourish.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Move footer to footer.html-->
+<!-- Need to insert the footer fragment here-->
+<div th:insert="fragments/footer.html :: footer"></div>
+
+<!--<div class="container my-5">-->
+<!--    <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">-->
+<!--        <div class="container">-->
+<!--            <p class="navbar-text pull-left">© 2021 Generation: You Employed, Inc. | Terms of Use | Privacy Policy</p>-->
+<!--            <a href="#" class="navbar-btn btn-danger btn pull-right">Sitemap</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!-- SCRIPTS AND STYLES-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

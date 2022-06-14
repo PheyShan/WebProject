@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>Products Form</title>
+</head>
+<body>
+
+<!--Delete-->
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">-->
+<!--    <a class="navbar-brand" href="https://www.generation.org/">BrandLogo</a>-->
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--        <ul class="navbar-nav mr-auto">                                               &lt;!&ndash; margin right - push items to the right &ndash;&gt;-->
+<!--            <li class="nav-item active"><a class="nav-link" href="index.html"> HOME </a></li>-->
+<!--            <li class="nav-item "><a class="nav-link" href="aboutus.html"> ABOUT </a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="products.html"> PRODUCTS </a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="productform.html"> PRODUCTS FORM </a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal"> CONTACT </a></li>-->
+<!--        </ul>-->
+
+<!--        <form class="form-inline my-2 my-lg-0">-->
+<!--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--<div class="modal fade" id="exampleModal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <p>Contact details</p>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <p>For more enquiries, please contact +65-97887434 or email at contactsg@generation.org</p>-->
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--                <a class="btn btn-primary" data-dismiss="modal">Close</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!-- Need to insert the navbar fragment here-->
+<div th:insert="fragments/navbar.html :: navbar"></div>
+<!-- Need to insert the modal fragment here -->
+<div th:insert="fragments/navbar.html :: menuModal"></div>
+
+<!-- Refer (https://www.w3schools.com/tags/att_form_enctype.asp)
+The 'enctype' attribute specifies how the form-data should be encoded when submitting it to the server.
+Note: The enctype attribute can be used only if method="post".
+Syntax : <form enctype="value">
+
+enctype="multipart/form-data" : This value is necessary if the user will upload a file through the form (File will be sent in multipart (several bytes) to backend). Otherwise, will return the value in default "application/x-www-form-urlencoded"  -->
+<div class="jumbotron">
+    <h1 class="display-4">New Product</h1>
+    <form id="newItemForm" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="newItemNameInput">Name</label>
+            <input type="text" class="form-control" id="newItemNameInput">
+        </div>
+        <div class="form-group">
+            <label for="newItemDescription">Description</label>
+            <textarea type="text" class="form-control" id="newItemDescription"></textarea>
+        </div>
+
+        <div class="form-group">
+            <!--<label for="newItemImageUrl">Image URL</label>
+            <input type="text" class="form-control" id="newItemImageUrl">-->
+            <label for="newItemImageFile">Image Upload</label>
+            <input type="file" id="newItemImageFile" name="newItemImageFile">
+        </div>
+
+        <div class="form-group">
+            <label for="newItemStyle">Style</label>
+            <textarea type="text" class="form-control" id="newItemStyle"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="newItemPrice">Price</label>
+            <input type="text" class="form-control" id="newItemPrice">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Save Item</button>
+    </form>
+</div> <!-- End of Product Form -->
+
+
+<!--Delete-->
+
+<!--<div class="container my-5">-->
+<!--    <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">-->
+<!--        <div class="container">-->
+<!--            <p class="navbar-text pull-left">© 2021 Generation: You Employed, Inc. | Terms of Use | Privacy Policy</p>-->
+<!--            <a href="#" class="navbar-btn btn-danger btn pull-right">Sitemap</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!-- Need to insert the footer fragment here-->
+<div th:insert="fragments/footer.html :: footer"></div>
+
+<!-- SCRIPTS AND STYLES-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<link href="css/styles.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+<script src="js/productController.js"></script>
+<script src="js/productForm.js"></script>
+
+</body>
+</html>
